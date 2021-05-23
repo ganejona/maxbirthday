@@ -3,9 +3,11 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="style.css">
 </head>
+
 <body background="twerk.gif">
 	<div class="cursor">
-		<div class="endorsements">
+		<button onclick="generateEndorsements()" style="background: black; padding: 10px;"><font style="font-size: 25px; color: white; font-weight: bold;">ENDORSE!</font></button>
+		<div class="endorsements" id='endorsements' onscroll="generateEndorsements()">
 			<div class="endorsement-text"><p>"5/7: Ive never seen someone eat spicy ribs like Max"<br/><br/>- Noships</p></div>
 			<div class="endorsement-text"><p>"No one ever told me I had dumps like a truck, truck, truck or thighs like what, what, what until I met Max"<br/><br/>- Kiwi</p></div>
 			<div class="endorsement-text"><p>"10/10: Best twerker I've ever seen. Would pay top dollar to watch him twerk. What an ass."<br/><br/>- chrstn</p></div>
@@ -16,13 +18,43 @@
 			<div class="endorsement-text"><p>"Asked for spaghetti code, got his spaghetti instead. 11/10 would slurp again"<br/><br/>- Moon</p></div>
 			<div class="endorsement-text"><p>"Maxu papi ily."<br/><br/>- unknown user</p></div>
 			<div class="endorsement-text"><p>"Compliments everyone else's ass, but lowkey higkey has the biggest dumpy in the lobby"<br/><br/>- Airwick</p></div>
-			<div class="endorsement-text"><p>"Would let max shake that gluteus maximus in my face"<br/><br/>- koha</p></div>
 			<div class="endorsement-text"><p>"Was looking for a dump truck but found a super wholesome loving man instead"<br/><br/>- Anonymous</p></div>
 			<div class="endorsement-text"><p>"If you haven’t heard Twerkeus Maximus’ podcast, just know that the poop talk is 100%."<br/><br/>- DADDY GRACE</p></div>
 			<div class="endorsement-text"><p>"Hella good fella. (⁎⁍̴̛ᴗ⁍̴̛⁎)"<br/><br/>- indiefoxx</p></div>
+			<div class="endorsement-text"><p>"Would let max shake that gluteus maximus in my face"<br/><br/>- koha</p></div>
 		</div>
 	</div>
+	<script>
+		function randomChoice(arr) {
+			return arr[Math.floor(Math.random() * arr.length)];
+		  }
+		text = [
+			"5/7: Ive never seen someone eat spicy ribs like Max",
+			"No one ever told me I had dumps like a truck, truck, truck or thighs like what, what, what until I met Max",
+			"10/10: Best twerker I've ever seen. Would pay top dollar to watch him twerk. What an ass.",
+			"My husband used to never let me twerk for him. Max's Werk a Twerk in 7 days DVD saved our marriage and we now have 12 kids.",
+			"'Em photography skills doe. &#x1F4F7;",
+			"In a world full of artificial ass, max's work kept me off the streets and inspired me to own my God-given assets",
+			"Need great Tina dance gif? Look no further!! I strongly recommend Max for my next memeable situations!!",
+			"Asked for spaghetti code, got his spaghetti instead. 11/10 would slurp again",
+			"Maxu papi ily.",
+			"Compliments everyone else's ass, but lowkey higkey has the biggest dumpy in the lobby",
+			"Was looking for a dump truck but found a super wholesome loving man instead",
+			"If you haven’t heard Twerkeus Maximus’ podcast, just know that the poop talk is 100%.",
+			"Hella good fella. (⁎⁍̴̛ᴗ⁍̴̛⁎)",
+			"Would let max shake that gluteus maximus in my face"
+
+		]
+		function generateEndorsements() {
+			for (i=0; i<4; i++){
+				var element = document.createElement('div')
+				element.className = "endorsement-text"
+				var child = document.createElement('p')
+				child.innerHTML = "\""+randomChoice(text)+"\" <br></br> -koha"
+				element.appendChild(child)
+				document.getElementById('endorsements').appendChild(element)
+			}
+		}
+	</script>
 </body>
 </html>
-
-
